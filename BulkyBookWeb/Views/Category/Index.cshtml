@@ -1,7 +1,7 @@
 ﻿
 @model IEnumerable<Category>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Category";
 }
 
 <div class="container p-3">
@@ -20,6 +20,7 @@
         <tr>
             <th>Category Name</th>
              <th>Display Order</th>
+             <th>Display Order</th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +32,12 @@
                 </td>
                 <td width="30%">
                     @obj.DisplayOrder
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a class="btn btn-primary mx-2" asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id" ><i class="bi bi-pencil-square"></i>Edit</a>
+                        <a class="btn btn-primary mx-2" asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id" ><i class="bi bi-trash-fill"></i>Delete</a>
+                    </div>
                 </td>
             </tr>
         }
